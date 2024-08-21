@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movie Ticket Price Calculator</title>
+</head>
+<body>
+  <h1>Movie Ticket Price</h1>
+  <label for="age">Enter your age:</label>
+  <input type="number" id="age">
+  <button onclick="calculatePrice()">Calculate Price</button>
+  <p id="result"></p>
+
+  <script>
+    function calculatePrice() {
+      const age = parseInt(document.getElementById("age").value);
+      const price = getMovieTicketPrice(age);
+      document.getElementById("result").textContent = "Ticket price: $" + price;
+    }
+
+    function getMovieTicketPrice(age) {
+      switch (true) {
+        case age <= 12:
+          return 10;
+        case age <= 17:
+          return 15;
+        default:
+          return 20;
+      }
+    }
+  </script>
+</body>
+</html>
